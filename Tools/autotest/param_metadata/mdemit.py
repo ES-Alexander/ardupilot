@@ -5,6 +5,7 @@ Emit parameter documentation in markdown format
 
 from param import known_param_fields
 from emit import Emit
+import time
 import re
 import os
 
@@ -13,7 +14,7 @@ sub_blacklist = ['AVOID_', 'CIRCLE_', 'FLOW', 'MIS_', 'PRX', 'RALLY_', 'RCMAP_',
 
 # Parameter groups with redundant information (ie RCn_, SERVOn_)
 # We can keep the documentation concise by only documenting these once
-nparams = ['RCn_', 'SERVOn_', 'SRn_', 'BTNn_']
+nparams = ['RCn_', 'SERVOn_', 'SRn_', 'BTNn_', 'BATTn_', 'BAROn_GND_', 'CAN_Dn_', 'CAN_Dn_KDE_', 'CAN_Dn_UC_', 'CAN_Pn_', 'RNGFNDn_']
 
 class MDEmit(Emit):
 
@@ -86,6 +87,8 @@ class MDEmit(Emit):
                 name = re.sub('\d+', 'n', name, 1)
             tag = '%s: %s' % (name, param.DisplayName)
             t += '\n\n## %s' % tag
+            if os.getenv('DIFF'):
+                continue
             if d.get('User', None) == 'Advanced':
                 t += '\n\n*Note: This parameter is for advanced users*'
             t += "\n\n%s" % param.Description
