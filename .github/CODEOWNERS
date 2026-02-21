@@ -1,0 +1,44 @@
+# Maintainers responsible for a given section of the ArduPilot codebase.
+# PRs with changes to files within a specified section (latest match only) will be auto-requested for a review.
+
+### Global repo owners
+*     @tridge @rmackay9
+
+###===   Vehicles   ===###
+##--  AntennaTracker  --##
+/AntennaTracker/ @tridge @rmackay9
+
+##--  Copter  --##
+/ArduCopter/ @rmackay9
+
+# TradHeli
+**/*heli* @bnsgeyer
+**/*Heli* @bnsgeyer
+**/*HELI* @bnsgeyer
+
+##--  Plane  --##
+/ArduPlane/ @tridge @magicrub
+
+##--  Rover  --##
+/Rover/ @rmackay9
+
+##--  Sub  --##
+/ArduSub/ @williangalvani
+
+##--  Blimp  --##
+/Blimp/
+
+##--  Misc  --##
+# 3DRSolo
+# VR...
+
+###===   Boards   ===###
+/libraries/AP_HAL_Linux/boards/navigator/ @williangalvani
+/libraries/AP_HAL_Linux/*Navigator* @williangalvani
+/libraries/AP_HAL_Linux/*Navio* @staroselskii
+
+###===   Tools   ===###
+/Tools/ @peterbarker
+
+###===   Libraries   ===###
+/libraries/AP_Scripting/
