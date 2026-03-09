@@ -177,7 +177,14 @@ void AP_Motors6DOF::setup_motors(motor_frame_class frame_class, motor_frame_type
 
     case SUB_FRAME_CUSTOM:
         // Put your custom motor setup here
-        //break;
+        _frame_class_string = "OMNI6";
+        add_motor_raw_6dof(AP_MOTORS_MOT_1,      1,      1,    0.5,     -1,      0,      1,     1);
+        add_motor_raw_6dof(AP_MOTORS_MOT_2,     -1,      1,   -0.5,     -1,      0,     -1,     2);
+        add_motor_raw_6dof(AP_MOTORS_MOT_3,      1,     -1,    0.5,     -1,      0,     -1,     3);
+        add_motor_raw_6dof(AP_MOTORS_MOT_4,     -1,     -1,   -0.5,     -1,      0,      1,     4);
+        add_motor_raw_6dof(AP_MOTORS_MOT_5,      0,      0,     -1,      0,      1,      0,     5);
+        add_motor_raw_6dof(AP_MOTORS_MOT_6,      0,      0,      1,      0,      1,      0,     6);
+        break;
 
     case SUB_FRAME_SIMPLEROV_3:
         _frame_class_string = "SIMPLEROV_3";
