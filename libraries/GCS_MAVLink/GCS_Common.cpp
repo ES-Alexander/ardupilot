@@ -6068,7 +6068,10 @@ void GCS_MAVLINK::send_sys_status()
         errors1,
         errors2,
         dropped_logmessage_count,  // errors3
-        errors4); // errors4
+        errors4, // errors4
+        0,  // onboard_control_sensors_present_extended
+        0,  // onboard_control_sensors_enabled_extended
+        0); // onboard_control_sensors_health_extended
 }
 
 void GCS_MAVLINK::send_extended_sys_state() const
