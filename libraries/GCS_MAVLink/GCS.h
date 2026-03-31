@@ -503,6 +503,9 @@ public:
 
     MAV_RESULT set_message_interval(uint32_t msg_id, int32_t interval_us);
 
+    // Helper function to override the input to a RC channel
+    void manual_override(class RC_Channel *c, int16_t value_in, uint16_t offset, float scaler, const uint32_t tnow, bool reversed = false);
+
 protected:
 
     bool mavlink_coordinate_frame_to_location_alt_frame(MAV_FRAME coordinate_frame,
@@ -784,8 +787,6 @@ protected:
     
     static constexpr const float magic_force_arm_value = 2989.0f;
     static constexpr const float magic_force_arm_disarm_value = 21196.0f;
-
-    void manual_override(class RC_Channel *c, int16_t value_in, uint16_t offset, float scaler, const uint32_t tnow, bool reversed = false);
 
     uint8_t receiver_rssi() const;
 
